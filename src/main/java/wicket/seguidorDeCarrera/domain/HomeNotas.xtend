@@ -1,7 +1,6 @@
 package wicket.seguidorDeCarrera.domain
 
 import org.uqbar.commons.model.CollectionBasedHome
-import seguidorDeCarrera.domain.Nota
 import org.uqbar.commons.utils.Observable
 import org.apache.commons.collections15.Predicate
 import java.util.Date
