@@ -1,6 +1,5 @@
 package wicket.seguidorDeCarrera.domain
 
-import org.uqbar.commons.utils.Observable
 import java.util.Date
 import org.uqbar.commons.model.Entity
 import org.uqbar.commons.model.UserException
