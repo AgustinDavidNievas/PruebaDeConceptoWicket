@@ -11,8 +11,8 @@ import org.apache.wicket.markup.html.panel.FeedbackPanel
 class NuevaMateriaPage extends WebPage{
 	extension WicketExtensionFactoryMethods = new WicketExtensionFactoryMethods
 	
-	private final Materia materia
-	private final boolean finalAprobado
+	//private final Materia materia
+	//private final boolean finalAprobado
 	private final SeguidorDeCarreraPage mainPage
 	
 	new(Materia materia, SeguidorDeCarreraPage mainPage) {
