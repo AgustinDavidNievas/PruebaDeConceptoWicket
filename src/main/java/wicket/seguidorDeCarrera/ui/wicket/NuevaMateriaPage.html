@@ -1,10 +1,40 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
+	<html>
+		<head>
+			<link href="css/bootstrap.css" rel="stylesheet" media="screen">
+    		<link href="css/bootstrap-theme.css" rel="stylesheet" media="screen">
+        	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+			<title>Nueva Materia</title>
+		</head>
+		<body>
+			<div class="container">
+	        <table width="90%">
+	            <tr>
+	                <td>
+	                    <h1 wicket:id="titulo">Nueva Materia</h1>
+	                </td>
+	            </tr>
+	        </table>
+	        
+	        <form wicket:id="nuevaMateriaForm" class="form">
+	        	<fieldset>
+	        	<div class="form-group">
+		        	<label class="control-label" for="nombre">Nombre</label>
+		        	<div class="controls">
+		        		<input wicket:id="nombre" type="text" placeholder="Proyecto Final" class="form-control" />
+		        	</div>
+		        	
+		        	<div class="form-group">
+        			<label class="control-label" for="nombre">Descripcion</label>
+        			<div class="controls">
+        				<input wicket:id="descripcion" type="text" placeholder="Parcial" class="form-control"/>
+        	    	</div>
+	        		 <div class="form-actions">
+                    	<button wicket:id="aceptar" type="submit" class="btn btn-primary">Aceptar</button>
+                    	<button wicket:id="cancelar" type="submit" class="btn">Cancelar</button>
+                		</div>
+                	</fieldset>
+	        		</form>
+	        	</div>
+		</body>
 </html>
