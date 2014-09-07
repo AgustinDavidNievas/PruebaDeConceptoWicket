@@ -1,10 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Editar Nota</title>
 </head>
 <body>
+
+	<div class="container">
+
+		<table width="90%">
+			<tr>
+				<td>
+					<h1 wicket:id="titulo">Editar Nota</h1>
+				</td>
+			</tr>
+		</table>
+
+		<form wicket:id="editarNotaForm" class="form">
+			<fieldset>
+				<div class="form-group">
+					<label class="control-label" for="nombre">Fecha</label>
+					<div class="controls">
+						<input wicket:id="fecha" type="text" placeholder="dd/mm/aaaa"
+							class="form-control" />
+							</div>
+				<div class="form-group">
+					<label class="control-label" for="nombre">Descripcion</label>
+					<div class="controls">
+						<input wicket:id="descripcion" type="text" placeholder="Tipo de Evaluacion"
+							class="form-control" />
+						<div>
+							<input type= "checkbox" name="aprobado" value="Nota"> Aprobo
+						</div>
+							</div>
+				 <div class="form-actions">
+	        		 	<button wicket:id="cancelar" type="submit" class="btn">Volver</button>
+                    	<button wicket:id="aceptar" type="submit" class="btn btn-primary">Aceptar</button>
+                    	
+                		</div>
+                		
+		</form>
+
+	</div>
 
 </body>
 </html>
