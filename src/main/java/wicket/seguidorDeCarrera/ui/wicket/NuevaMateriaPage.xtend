@@ -32,8 +32,7 @@ class NuevaMateriaPage extends WebPage {
 
 	def agregarCamposEdicion(Form<Materia> parent) {
 		parent.addChild(new TextField<String>("nombre"))
-		parent.addChild(new TextField<String>("descripcion"))
-
+		
 		parent.addChild(new FeedbackPanel("feedbackPanel"))
 	}
 
