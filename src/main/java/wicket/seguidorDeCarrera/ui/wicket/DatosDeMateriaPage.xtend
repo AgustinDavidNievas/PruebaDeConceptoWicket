@@ -29,10 +29,7 @@ class DatosDeMateriaPage extends WebPage {
 
 	}
 	
-	def agregarAcciones(Form<Materia> parent) {//TODO: esto no tiene q estar aca sino linkeado con la tabla de notas
-		parent.addChild(new XButton("editarNota").onClick = [|seguidor.notaSeleccionada = new Nota
-					editarNota(seguidor.notaSeleccionada)])
-	
+	def agregarAcciones(Form<Materia> parent) {
 	}
 
 	def agregarCamposDeEdicion(Form<Materia> parent) {

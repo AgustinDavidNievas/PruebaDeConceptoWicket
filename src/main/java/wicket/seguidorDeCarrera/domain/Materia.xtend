@@ -4,6 +4,7 @@ import java.util.List
 import org.uqbar.commons.model.Entity
 import org.uqbar.commons.model.UserException
 import org.uqbar.commons.utils.Observable
+import java.util.ArrayList
 
 @Observable
 class Materia extends Entity implements Cloneable {
@@ -14,7 +15,7 @@ class Materia extends Entity implements Cloneable {
 	public val static nombre_Property = "nombre"
 
 	@Property int anioDeCursada
-	@Property List<Nota> notas
+	@Property List<Nota> notas = new ArrayList
 	@Property String ubicacionDeLaMateria
 	@Property String profesor
 	@Property SeguidorDeCarrera seguidorDeCarrera
@@ -30,14 +31,7 @@ class Materia extends Entity implements Cloneable {
 		
 	}
 
-	def crearMateria(String nombre) {
-		new Materia(nombre)
-		//this.notasDeCursada = newArrayList
-		//this.seguidorDeCarrera = new SeguidorDeCarrera
-		//this.seguidorDeCarrera.agregarMateria(this)
-		//SeguidorDeCarrera.seguidorDeCarreraUnico.agregarMateria(this)
- 
-	}
+
 
 	def agregarNota(Nota nota) {
 		//this.seguidorDeCarrera = new SeguidorDeCarrera
