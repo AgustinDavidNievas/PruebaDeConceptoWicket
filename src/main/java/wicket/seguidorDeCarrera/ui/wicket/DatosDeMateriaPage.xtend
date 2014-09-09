@@ -35,6 +35,12 @@ class DatosDeMateriaPage extends WebPage {
 		.onClick = [|editarNota(new Nota)]
 		)
 		
+		parent.addChild(
+			new XButton("cancelar") => [
+				onClick = [|volver]
+			])
+		
+		
 		parent.addChild(new XButton("-")
 		.onClick = [|]
 		
@@ -43,6 +49,13 @@ class DatosDeMateriaPage extends WebPage {
 		parent.addChild(new XButton("editarNota").onClick = [|seguidor.notaSeleccionada = new Nota
 					editarNota(seguidor.notaSeleccionada)])
 		  //TODO: este metodo(SOLO EL MENOS Y EDITAR NOTA) estSOLOa linkeado en realidad con la grilla de notas
+	}
+	
+	def volver() {
+	
+	responsePage = new SeguidorDeCarreraPage
+	
+	
 	}
 
 	def agregarCamposDeEdicion(Form<Materia> parent) {
