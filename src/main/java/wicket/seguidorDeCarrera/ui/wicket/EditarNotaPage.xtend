@@ -56,7 +56,7 @@ class EditarNotaPage extends WebPage {
 
 	def volver() {
 
-		//mainPage.seguidorDeCarrera() SeguidorDeCarreraPage tiene que tener un mensaje de "start" o algo para ponerlo aca y que se pueda volver a la mainPage
+//		mainPage.seguidorDeCarrera() SeguidorDeCarreraPage tiene que tener un mensaje de "start" o algo para ponerlo aca y que se pueda volver a la mainPage
 //		responsePage = mainPage
 	}
 
