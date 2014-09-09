@@ -3,7 +3,9 @@ package wicket.seguidorDeCarrera.domain
 import java.util.Date
 import org.uqbar.commons.model.Entity
 import org.uqbar.commons.model.UserException
+import org.uqbar.commons.utils.Observable
 
+@Observable
 class Nota extends Entity implements Cloneable{
 	@Property Date fecha
 	@Property String descripcion

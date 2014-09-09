@@ -30,6 +30,19 @@ class DatosDeMateriaPage extends WebPage {
 	}
 	
 	def agregarAcciones(Form<Materia> parent) {
+		
+		parent.addChild(new XButton("+")
+		.onClick = [|editarNota(new Nota)]
+		)
+		
+		parent.addChild(new XButton("-")
+		.onClick = [|]
+		
+		)
+		
+		parent.addChild(new XButton("editarNota").onClick = [|seguidor.notaSeleccionada = new Nota
+					editarNota(seguidor.notaSeleccionada)])
+		  //TODO: este metodo(SOLO EL MENOS Y EDITAR NOTA) estSOLOa linkeado en realidad con la grilla de notas
 	}
 
 	def agregarCamposDeEdicion(Form<Materia> parent) {
@@ -60,9 +73,19 @@ class DatosDeMateriaPage extends WebPage {
 				new XButton("editarNota").onClick = [|seguidor.notaSeleccionada = item.modelObject
 					editarNota(seguidor.notaSeleccionada)]
 			)
+			item.addChild(
+				new XButton("-").onClick = [|seguidor.notaSeleccionada = item.modelObject
+					borrarNota()]
+				
+			)
 		]
 
 	}
+
+def borrarNota(){
+	seguidor.borrarNota
+	
+}
 
 	def editarNota(Nota nota) {
 
