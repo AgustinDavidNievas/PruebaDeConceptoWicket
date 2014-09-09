@@ -14,11 +14,9 @@ class EditarNotaPage extends WebPage {
 
 	Nota nota
 
-	private final SeguidorDeCarreraPage mainPage
+		new(Nota nota) {
 
-	new(Nota nota, SeguidorDeCarreraPage mainPage) {
-
-		this.mainPage = mainPage
+		
 		this.nota = nota
 		this.addChild(new Label("titulo", "Editar Nota"))
 		

@@ -3,7 +3,9 @@ package wicket.seguidorDeCarrera.domain
 import java.util.List
 import org.uqbar.commons.model.Entity
 import org.uqbar.commons.model.UserException
+import org.uqbar.commons.utils.Observable
 
+@Observable
 class Materia extends Entity implements Cloneable {
 
 	@Property Boolean finalAprobado
@@ -12,19 +14,19 @@ class Materia extends Entity implements Cloneable {
 	public val static nombre_Property = "nombre"
 
 	@Property int anioDeCursada
-	@Property List<Nota> notasDeCursada
+	@Property List<Nota> notas
 	@Property String ubicacionDeLaMateria
 	@Property String profesor
 	@Property SeguidorDeCarrera seguidorDeCarrera
 
 	new(String nombre) {
 		this.nombre = nombre
-		this.notasDeCursada = newArrayList
+		this.notas = newArrayList
 	}
 
 	new() {
 		super()
-		this.notasDeCursada = newArrayList
+		this.notas = newArrayList
 		
 	}
 
@@ -40,7 +42,7 @@ class Materia extends Entity implements Cloneable {
 	def agregarNota(Nota nota) {
 		//this.seguidorDeCarrera = new SeguidorDeCarrera
 		
-		this.notasDeCursada.add(nota)
+		this.notas.add(nota)
 
 	}
 	
