@@ -9,6 +9,8 @@ import wicket.seguidorDeCarrera.domain.SeguidorDeCarrera
 import org.uqbar.wicket.xtend.XButton
 //import org.apache.wicket.model.CompoundPropertyModel
 import org.uqbar.commons.utils.Observable
+import org.apache.wicket.markup.html.form.CheckBox
+import wicket.seguidorDeCarrera.domain.Materia
 
 @Observable
 class SeguidorDeCarreraPage extends WebPage {
@@ -20,16 +22,21 @@ class SeguidorDeCarreraPage extends WebPage {
 		this.seguidor = new SeguidorDeCarrera()
 		val seguidorDeCarreraForm = new Form<SeguidorDeCarrera>("seguidorDeCarreraForm", this.seguidor.asCompoundModel)
 		this.agregarGrillaResultados(seguidorDeCarreraForm)
-//		this.agregarAcciones(seguidorDeCarreraForm)
+		this.agregarAcciones(seguidorDeCarreraForm)
 		this.addChild(seguidorDeCarreraForm)
 	}
 	
-//	def agregarAcciones(Form<SeguidorDeCarrera> parent) {
-//			
-//			val nuevaMateriaButton = new XButton("nuevaMateria")
-//		nuevaMateriaButton.onClick = [|  ]
-//		parent.addChild(nuevaMateriaButton)
-//		
+	def nuevaMateria(Materia materia){
+		responsePage = new NuevaMateriaPage(materia, this)
+	}
+	
+	def agregarAcciones(Form<SeguidorDeCarrera> parent) {
+			
+			val nuevaMateriaButton = new XButton("nuevaMateria")
+		nuevaMateriaButton.onClick = [| nuevaMateria(new Materia)  ]
+		parent.addChild(nuevaMateriaButton)
+
+	}
 //		parent.addChild(new XButton("editarMateria")
 //			.onClick = [|  ]
 //		)
@@ -46,9 +53,9 @@ class SeguidorDeCarreraPage extends WebPage {
 			item.addChild(new Label("nombre"))
 			//item.addChild(new Label("modeloCelular.descripcion"))
 			
-//			val checkResumen = new CheckBox("recibeResumenCuenta")
-//			checkResumen.setEnabled(false)
-//			item.addChild(checkResumen)
+			val checkFinal = new CheckBox("finalAprobado")
+			checkFinal.setEnabled(false)
+			item.addChild(checkFinal)
 //			
 //			item.addChild(new XButton("editar").onClick = [| editar(item.modelObject) ])
 //			item.addChild(new XButton("eliminar")
