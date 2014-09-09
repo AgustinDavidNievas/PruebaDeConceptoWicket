@@ -44,7 +44,7 @@ class EditarNotaPage extends WebPage {
 			new XButton("aceptar") => [
 				onClick = [ |
 					nota.validar()
-					//Nota.home.create(nota)
+					Nota.home.create(nota)
 					this.volver()
 				]
 			])
