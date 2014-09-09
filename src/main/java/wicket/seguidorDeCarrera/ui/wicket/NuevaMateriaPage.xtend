@@ -23,10 +23,10 @@ class NuevaMateriaPage extends WebPage {
 		this.materia = nuevaMateria
 		this.addChild(new Label("titulo", "Nueva Materia"))
 
-		val buscarForm = new Form<Materia>("nuevaMateriaForm", this.materia.asCompoundModel)
-		this.agregarCamposEdicion(buscarForm)
-		this.agregarAcciones(buscarForm)
-		this.addChild(buscarForm)
+		val nuevaMateriaForm = new Form<Materia>("nuevaMateriaForm", this.materia.asCompoundModel)
+		this.agregarCamposEdicion(nuevaMateriaForm)
+		this.agregarAcciones(nuevaMateriaForm)
+		this.addChild(nuevaMateriaForm)
 
 	}
 

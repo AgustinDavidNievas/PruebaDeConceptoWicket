@@ -20,13 +20,13 @@ class SeguidorDeCarreraPage extends WebPage {
 
 	}
 	
-//	def agregarAcciones(Form<SeguidorDeCarrera> parent) {
-//		
-//		parent.addChild(new XButton("nuevaMateria")
-//			.onClick = [| new Materia ]
-//		)
-//		
-//	} // Este seria el boton de nueva materia
+	def agregarAcciones(Form<SeguidorDeCarrera> parent) {
+		
+		parent.addChild(new XButton("nuevaMateria")
+			.onClick = [| new Materia ]
+		)
+		
+	} // Este seria el boton de nueva materia
 
 	def agregarGrillaResultados(Form<SeguidorDeCarrera> parent) {
 		val listView = new XListView("resultados")
@@ -56,7 +56,7 @@ class SeguidorDeCarreraPage extends WebPage {
 	}
 
 	def editar(Nota nota) {
-	//	responsePage = new EditarNotaPage(nota, this) // Deberia implementarce asi, pero me rompe :(
+		responsePage = new EditarNotaPage(nota, this) // Deberia implementarce asi, pero me rompe :( , a mi no me rompe (Agus) :P
 	}
 
 }
