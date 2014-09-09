@@ -7,8 +7,10 @@ import org.uqbar.wicket.xtend.WicketExtensionFactoryMethods
 import org.uqbar.wicket.xtend.XListView
 import wicket.seguidorDeCarrera.domain.SeguidorDeCarrera
 import org.uqbar.wicket.xtend.XButton
-import org.apache.wicket.model.CompoundPropertyModel
+//import org.apache.wicket.model.CompoundPropertyModel
+import org.uqbar.commons.utils.Observable
 
+@Observable
 class SeguidorDeCarreraPage extends WebPage {
 	extension WicketExtensionFactoryMethods = new WicketExtensionFactoryMethods
 	var SeguidorDeCarrera seguidor
@@ -18,30 +20,30 @@ class SeguidorDeCarreraPage extends WebPage {
 		this.seguidor = new SeguidorDeCarrera()
 		val seguidorDeCarreraForm = new Form<SeguidorDeCarrera>("seguidorDeCarreraForm", this.seguidor.asCompoundModel)
 		this.agregarGrillaResultados(seguidorDeCarreraForm)
-		this.agregarAcciones(seguidorDeCarreraForm)
+//		this.agregarAcciones(seguidorDeCarreraForm)
 		this.addChild(seguidorDeCarreraForm)
 	}
 	
-	def agregarAcciones(Form<SeguidorDeCarrera> parent) {
-			
-			val nuevaMateriaButton = new XButton("nuevaMateria")
-		nuevaMateriaButton.onClick = [|  ]
-		parent.addChild(nuevaMateriaButton)
-		
-		parent.addChild(new XButton("editarMateria")
-			.onClick = [|  ]
-		)
-		
-		parent.addChild(new XButton("borrarMateria").onClick = [|  ])
-		
-		
-	}
-	
+//	def agregarAcciones(Form<SeguidorDeCarrera> parent) {
+//			
+//			val nuevaMateriaButton = new XButton("nuevaMateria")
+//		nuevaMateriaButton.onClick = [|  ]
+//		parent.addChild(nuevaMateriaButton)
+//		
+//		parent.addChild(new XButton("editarMateria")
+//			.onClick = [|  ]
+//		)
+//		
+//		parent.addChild(new XButton("borrarMateria").onClick = [|  ])
+//		
+//		
+//	}
+//	
 	def agregarGrillaResultados(Form<SeguidorDeCarrera> parent) {
-		val listView = new XListView("resultados")
+		val listView = new XListView("materias")
 		listView.populateItem = [ item |
 			item.model = item.modelObject.asCompoundModel
-			item.addChild(new Label("materias"))
+			item.addChild(new Label("nombre"))
 			//item.addChild(new Label("modeloCelular.descripcion"))
 			
 //			val checkResumen = new CheckBox("recibeResumenCuenta")
@@ -57,6 +59,6 @@ class SeguidorDeCarreraPage extends WebPage {
 //			)
 		]
 		parent.addChild(listView)
-	}
 	
+	}
 }

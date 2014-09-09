@@ -6,13 +6,19 @@
 
 
 	<div class="container">
-
-		<h1>Seguidor De Carrera</h1>
-
+		<table width="100%">
+            <tr>
+                <td>
+                    <h1>Seguidor De Carrera</h1>
+                </td>
+            </tr>
+        </table>
 	</div>
 <body>
 
 	<div>
+	
+	   <form wicket:id="seguidorDeCarreraForm" class="form-horizontal">
 			<table class="table table-striped table-bordered table-condensed">
            		<thead>
 	           		<tr>
@@ -22,8 +28,15 @@
 	               	</tr>
 	            </thead>
 				<tbody>
+				<tr wicket:id="materias">
+	                   	<td>
+	                   	    <span wicket:id="nombre">unaMateria</span> 
+	               	    </td>
+	             </tr>
 				</tbody>
-			</table>				
+	
+				</table>
+				</form>				
 	</div>
 
 

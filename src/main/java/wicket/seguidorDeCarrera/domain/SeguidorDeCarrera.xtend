@@ -6,6 +6,7 @@ import java.util.ArrayList
 import org.uqbar.commons.utils.ApplicationContext
 import java.io.Serializable
 
+@org.uqbar.commons.utils.Observable
 class SeguidorDeCarrera implements Serializable {
 
 	@Property List<Materia> materias = new ArrayList
