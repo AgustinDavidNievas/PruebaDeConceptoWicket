@@ -10,20 +10,25 @@ import org.uqbar.wicket.xtend.XButton
 import org.uqbar.commons.utils.Observable
 import org.apache.wicket.markup.html.form.CheckBox
 import wicket.seguidorDeCarrera.domain.Materia
+import org.apache.wicket.markup.html.form.TextField
 
 @Observable
 class SeguidorDeCarreraPage extends WebPage {
 	extension WicketExtensionFactoryMethods = new WicketExtensionFactoryMethods
 	var SeguidorDeCarrera seguidor
+	
 
 	new() {
+		
 		this.seguidor = new SeguidorDeCarrera()
 		val seguidorDeCarreraForm = new Form<SeguidorDeCarrera>("seguidorDeCarreraForm", this.seguidor.asCompoundModel)
 		this.agregarGrillaResultados(seguidorDeCarreraForm)
 		this.agregarAcciones(seguidorDeCarreraForm)
+		this.agregarDatosDeMaterias(seguidorDeCarreraForm)
 		this.addChild(seguidorDeCarreraForm)
 		this.actualizar
 	}
+
 
 	def actualizar(){
 		
@@ -40,6 +45,12 @@ class SeguidorDeCarreraPage extends WebPage {
 		nuevaMateriaButton.onClick = [|nuevaMateria(new Materia)]
 		parent.addChild(nuevaMateriaButton)
 	}
+
+def agregarDatosDeMaterias(Form<SeguidorDeCarrera> parent){
+	parent.addChild(new TextField<Integer>("anioDeCursada"))
+	
+}
+
 
 	def agregarGrillaResultados(Form<SeguidorDeCarrera> parent) {
 		val listView = new XListView("materias")

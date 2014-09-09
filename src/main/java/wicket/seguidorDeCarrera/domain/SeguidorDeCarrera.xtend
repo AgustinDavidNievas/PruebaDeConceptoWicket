@@ -11,7 +11,7 @@ class SeguidorDeCarrera implements Serializable {
 
 	@Property List<Materia> materias = new ArrayList
 	@Property List<String> ubicaciones
-	@Property int anioDeCursada
+	@Property Integer anioDeCursada
 	val static aniodeCursada_Property = "anioDeCursada"
 	@Property Boolean finalAprobado
 	@Property String nombre
@@ -52,6 +52,7 @@ class SeguidorDeCarrera implements Serializable {
 
 	def void inicializarColeccionDeMaterias() {
 		materias = newArrayList
+		this.actualizar
 	}
 
 	def HomeMaterias getHomeMaterias() {
@@ -67,7 +68,6 @@ class SeguidorDeCarrera implements Serializable {
 
 	def actualizar() {
 		materias = newArrayList
-
 		this.materias = homeMaterias.allInstances.toList
 //		coleccionMaterias = homeMaterias.dameTodasLasMaterias(nombre)
 		this.seleccionarMateriaNumeroUno
