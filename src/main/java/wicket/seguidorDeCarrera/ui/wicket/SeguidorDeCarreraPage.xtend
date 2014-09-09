@@ -24,7 +24,6 @@ class SeguidorDeCarreraPage extends WebPage {
 		val seguidorDeCarreraForm = new Form<SeguidorDeCarrera>("seguidorDeCarreraForm", this.seguidor.asCompoundModel)
 		this.agregarGrillaResultados(seguidorDeCarreraForm)
 		this.agregarAcciones(seguidorDeCarreraForm)
-		this.agregarDatosDeMaterias(seguidorDeCarreraForm)
 		this.addChild(seguidorDeCarreraForm)
 		this.actualizar
 	}
@@ -45,11 +44,6 @@ class SeguidorDeCarreraPage extends WebPage {
 		nuevaMateriaButton.onClick = [|nuevaMateria(new Materia)]
 		parent.addChild(nuevaMateriaButton)
 	}
-
-def agregarDatosDeMaterias(Form<SeguidorDeCarrera> parent){
-	parent.addChild(new TextField<Integer>("materiaSeleccionada.anioDeCursada"))
-	
-}
 
 
 	def agregarGrillaResultados(Form<SeguidorDeCarrera> parent) {
