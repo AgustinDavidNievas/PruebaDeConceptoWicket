@@ -16,10 +16,10 @@ class SeguidorDeCarreraPage extends WebPage {
 	
 	new (){
 		this.seguidor = new SeguidorDeCarrera()
-		val Form<SeguidorDeCarrera> mainForm = new Form<SeguidorDeCarrera>("SeguidorDeCarreraForm", this.seguidor.asCompoundModel)
-		this.agregarGrillaResultados(mainForm)
-		this.agregarAcciones(mainForm)
-		this.addChild(mainForm)
+		val seguidorDeCarreraForm = new Form<SeguidorDeCarrera>("seguidorDeCarreraForm", this.seguidor.asCompoundModel)
+		this.agregarGrillaResultados(seguidorDeCarreraForm)
+		this.agregarAcciones(seguidorDeCarreraForm)
+		this.addChild(seguidorDeCarreraForm)
 	}
 	
 	def agregarAcciones(Form<SeguidorDeCarrera> parent) {
