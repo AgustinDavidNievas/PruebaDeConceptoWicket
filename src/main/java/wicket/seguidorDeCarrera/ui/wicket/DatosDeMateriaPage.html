@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container">
+		<table width="80%">
+			<tr>
+				<td>
+					<h1>Datos de la materia</h1>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+
+	<form wicket:id="datosDeMateriaForm" class="form-horizontal">
+
+		<fieldset>
+			<div class="form-group">
+				<label class="control-label" for="anioDeCursada">Año de
+					Cursada</label>
+				<div class="controls">
+					<input wicket:id="anioDeCursada" type="text" placeholder="unAño"
+						class="form-control">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="control-label" for="profesor">Profesor</label>
+				<div class="controls">
+					<input wicket:id="profesor" type="text" placeholder="unProfesor"
+						class="form-control">
+					</div>
+				</div>	
+
+				<div class="form-group">
+		        	<label class="control-label" for="ubicacion">Ubicacion de Materia</label>
+		        	<div class="controls">
+			        	<select wicket:id="ubicacionDeLaMateria">
+			              	<option>1c2014</option>
+			               	<option>2c2014</option>
+			            </select>
+                	</div>
+	        	</div>
+	        	
+	        	<div class="form-group">
+			        <label class="control-label" for="final">Final Aprobado</label>
+			        <div class="controls">
+            			<input wicket:id="finalAprobado" type="checkbox"/>
+                	</div>
+	        	</div>
+	            					
+					
+		</fieldset>
+	</form>
+</body>
+</html>

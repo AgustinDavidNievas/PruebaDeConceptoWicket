@@ -56,13 +56,18 @@ class SeguidorDeCarreraPage extends WebPage {
 		checkFinal.setEnabled(false)
 		item.addChild(checkFinal)
 		item.addChild(
-				new XButton("editarMateria").onClick = [ |
+					new XButton("editarMateria").onClick = [ |
 					seguidor.materiaSeleccionada = item.modelObject
-				//					seguidor.actualizarGrilla???
-																]
+					mostrarDatosDeMateria(seguidor.materiaSeleccionada)]
+
 																	)
 																		]
 			parent.addChild(listView)
 																
+	}
+	
+	def mostrarDatosDeMateria(Materia materia){
+		responsePage = new DatosDeMateriaPage(materia, seguidor)
+		
 	}
 }
