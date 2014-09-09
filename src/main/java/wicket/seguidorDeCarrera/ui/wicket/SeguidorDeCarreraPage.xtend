@@ -22,8 +22,14 @@ class SeguidorDeCarreraPage extends WebPage {
 		this.agregarGrillaResultados(seguidorDeCarreraForm)
 		this.agregarAcciones(seguidorDeCarreraForm)
 		this.addChild(seguidorDeCarreraForm)
+		this.actualizar
 	}
 
+	def actualizar(){
+		
+		this.seguidor.actualizar
+		
+	}	
 	def nuevaMateria(Materia materia) {
 		responsePage = new NuevaMateriaPage(materia, this)
 	}
