@@ -47,7 +47,7 @@ class SeguidorDeCarreraPage extends WebPage {
 	}
 
 def agregarDatosDeMaterias(Form<SeguidorDeCarrera> parent){
-	parent.addChild(new TextField<Integer>("anioDeCursada"))
+	parent.addChild(new TextField<Integer>("materiaSeleccionada.anioDeCursada"))
 	
 }
 
