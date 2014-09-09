@@ -3,58 +3,61 @@
 
 <head>
 <style>
-
 table.materias {
-    width: 40%;    
-    background-color: #f1f1c1;
+	width: 40%;
+	background-color: #f1f1c1;
 }
 </style>
 </head>
 
 
-	<div class="container">
-		<table width="100%">
-            <tr>
-                <td>
-                    <h1>Seguidor De Carrera</h1>
-                </td>
-            </tr>
-        </table>
-	</div>
+<div class="container">
+	<table width="100%">
+		<tr>
+			<td>
+				<h1>Seguidor De Carrera</h1>
+			</td>
+		</tr>
+	</table>
+</div>
 <body>
 
- 
 
-	<div>	
-	   <form wicket:id="seguidorDeCarreraForm" class="form-horizontal">
+
+	<div>
+		<form wicket:id="seguidorDeCarreraForm" class="form-horizontal">
 			<table class="materias">
-           		<thead>
-	           		<tr>
-	               		<th id="main">Materia</th>
-	               		<th id="main">Final Aprobado</th>
-	               		<th id="main">Acciones</th>
-	               	</tr>
-	            </thead>
+				<thead>
+					<tr>
+						<th id="main">Materia</th>
+						<th id="main">Final Aprobado</th>
+						<th id="main">Acciones</th>
+					</tr>
+				</thead>
 				<tbody>
-				<tr wicket:id="materias">
-	                   	<td>
-	                   	    <span wicket:id="nombre">unaMateria</span> 
-	               	    </td>
-	            
-	              		<td>
-	       	            	<input type="checkbox" wicket:id="finalAprobado"/>
-	   	                </td> 
-	   	          </tr>       
+					<tr wicket:id="materias">
+						<td><span wicket:id="nombre">unaMateria</span></td>
+
+						<td><input type="checkbox" wicket:id="finalAprobado" /></td>
+						<td>
+							<div class="materia-actions">
+								<button wicket:id="editarMateria" class="btn-link">Editar</button>
+							</div>
+
+						</td>
+
+					</tr>
 				</tbody>
-	
-				</table>
-				
-				<div class="form-actions">
-                <button wicket:id="nuevaMateria" class="btn btn-success">Agregar Materia</button>
-            </div>
-            <br/>
-            
-				</form>				
+
+			</table>
+
+			<div class="form-actions">
+				<button wicket:id="nuevaMateria" class="btn btn-success">Agregar
+					Materia</button>
+			</div>
+			<br />
+
+		</form>
 	</div>
 
 
