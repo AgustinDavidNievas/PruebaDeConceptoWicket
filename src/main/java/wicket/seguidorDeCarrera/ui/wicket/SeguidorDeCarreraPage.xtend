@@ -2,15 +2,14 @@ package wicket.seguidorDeCarrera.ui.wicket
 
 import org.apache.wicket.markup.html.WebPage
 import org.apache.wicket.markup.html.basic.Label
-import org.apache.wicket.markup.html.form.Form
-import org.uqbar.wicket.xtend.WicketExtensionFactoryMethods
-import org.uqbar.wicket.xtend.XListView
-import wicket.seguidorDeCarrera.domain.SeguidorDeCarrera
-import org.uqbar.wicket.xtend.XButton
-import org.uqbar.commons.utils.Observable
 import org.apache.wicket.markup.html.form.CheckBox
+import org.apache.wicket.markup.html.form.Form
+import org.uqbar.commons.utils.Observable
+import org.uqbar.wicket.xtend.WicketExtensionFactoryMethods
+import org.uqbar.wicket.xtend.XButton
+import org.uqbar.wicket.xtend.XListView
 import wicket.seguidorDeCarrera.domain.Materia
-import org.apache.wicket.markup.html.form.TextField
+import wicket.seguidorDeCarrera.domain.SeguidorDeCarrera
 
 @Observable
 class SeguidorDeCarreraPage extends WebPage {
@@ -57,17 +56,13 @@ class SeguidorDeCarreraPage extends WebPage {
 		item.addChild(checkFinal)
 		item.addChild(
 					new XButton("editarMateria").onClick = [ |
-					seguidor.materiaSeleccionada = item.modelObject
-					mostrarDatosDeMateria(seguidor.materiaSeleccionada)]
-
-																	)
-																		]
-			parent.addChild(listView)
-																
+						seguidor.materiaSeleccionada = item.modelObject
+						mostrarDatosDeMateria(seguidor.materiaSeleccionada)]
+		)]
+		parent.addChild(listView)
 	}
 	
 	def mostrarDatosDeMateria(Materia materia){
 		responsePage = new DatosDeMateriaPage(materia, seguidor)
-		
 	}
 }

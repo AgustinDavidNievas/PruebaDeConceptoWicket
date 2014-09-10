@@ -26,7 +26,6 @@ class DatosDeMateriaPage extends WebPage {
 		this.addChild(datosDeMateriaForm)
 		this.actualizar(seguidor)
 		this.seguidor = seguidor
-
 	}
 	
 	def agregarAcciones(Form<Materia> parent) {
@@ -40,15 +39,14 @@ class DatosDeMateriaPage extends WebPage {
 				onClick = [|volver]
 			])
 		
-		
-		parent.addChild(new XButton("-")
-		.onClick = [|]
-		
-		)
-		
-		parent.addChild(new XButton("editarNota").onClick = [|seguidor.notaSeleccionada = new Nota
-					editarNota(seguidor.notaSeleccionada)])
-		  //TODO: este metodo(SOLO EL MENOS Y EDITAR NOTA) estSOLOa linkeado en realidad con la grilla de notas
+//		parent.addChild(new XButton("-")
+//		.onClick = [|]
+//		
+//		)
+//		
+//		parent.addChild(new XButton("editarNota").onClick = [|seguidor.notaSeleccionada = new Nota
+//					editarNota(seguidor.notaSeleccionada)])
+//		  //TODO: este metodo(SOLO EL MENOS Y EDITAR NOTA) estSOLOa linkeado en realidad con la grilla de notas
 	}
 	
 	def volver() {
@@ -70,9 +68,7 @@ class DatosDeMateriaPage extends WebPage {
 	}
 
 	def actualizar(SeguidorDeCarrera seguidor) {
-
 		seguidor.actualizar
-
 	}
 
 	def agregarGrillaDeNotas(Form<Materia> parent) {
@@ -92,12 +88,12 @@ class DatosDeMateriaPage extends WebPage {
 				
 			)
 		]
-
+		
+		parent.addChild(listView)
 	}
 
 def borrarNota(){
 	seguidor.borrarNota
-	
 }
 
 	def editarNota(Nota nota) {
